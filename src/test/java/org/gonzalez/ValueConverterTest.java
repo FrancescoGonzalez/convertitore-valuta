@@ -1,6 +1,7 @@
 package org.gonzalez;
 
 import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class ValueConverterTest {
 
@@ -9,7 +10,7 @@ public class ValueConverterTest {
     public void eur2chfTest() {
 
         Double result = converter.convert(50, "EUR", "CHF");
-        assert result.equals(Double.valueOf("47.52"));
+        assertEquals(result, Double.valueOf("47.52"));
 
     }
 
@@ -18,7 +19,7 @@ public class ValueConverterTest {
 
 
         Double result = converter.convert(100, "EUR", "CHF");
-        assert result.equals(Double.valueOf("95.05"));
+        assertEquals(result, Double.valueOf("95.05"));
 
     }
 
@@ -26,6 +27,6 @@ public class ValueConverterTest {
     public void chf2eurTest() {
 
         Double result = converter.convert(50, "CHF", "EUR");
-        assert result.equals(Double.valueOf("52.61"));
+        assertEquals(result, Double.valueOf("52.61"));
     }
 }
