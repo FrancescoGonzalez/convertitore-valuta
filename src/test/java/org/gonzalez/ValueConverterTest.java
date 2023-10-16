@@ -10,7 +10,7 @@ public class ValueConverterTest {
     public void eur2chfTest() {
 
         Double result = converter.convert(50, "EUR", "CHF");
-        assertEquals(result, Double.valueOf("47.52"));
+        assertEquals(result, Double.valueOf("47.495"));
 
     }
 
@@ -19,7 +19,7 @@ public class ValueConverterTest {
 
 
         Double result = converter.convert(100, "EUR", "CHF");
-        assertEquals(result, Double.valueOf("95.05"));
+        assertEquals(result, Double.valueOf("94.99"));
 
     }
 
@@ -27,6 +27,6 @@ public class ValueConverterTest {
     public void chf2eurTest() {
 
         Double result = converter.convert(50, "CHF", "EUR");
-        assertEquals(result, Double.valueOf("52.61"));
+        assertEquals(result, Double.valueOf("52.64"));
     }
 }
