@@ -1,8 +1,8 @@
 package org.gonzalez;
 
 public class ValueConverter {
-    public Double convert(double i, String v1, String v2) {
-        return i * getRate(v1, v2);
+    public Currency convert(double i, String v1, String v2, Double r1, Double r2) {
+        return new Currency(v1, i, r1).convert(new Currency(v2, null, r2));
     }
 
     public Double getRate(String v1, String v2) {

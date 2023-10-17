@@ -9,8 +9,8 @@ public class ValueConverterTest {
     @Test
     public void eur2chfTest() {
 
-        Double result = converter.convert(50, "EUR", "CHF");
-        assertEquals(result, Double.valueOf("47.495"));
+        Currency result = converter.convert(50, "EUR", "CHF", 1.0, 1.0528);
+        assertEquals(new Currency("CHF", 47.49, 1.0528).toString(), result.toString());
 
     }
 
@@ -18,15 +18,15 @@ public class ValueConverterTest {
     public void eur2chfSecondTest() {
 
 
-        Double result = converter.convert(100, "EUR", "CHF");
-        assertEquals(result, Double.valueOf("94.99"));
+        Currency result = converter.convert(100, "EUR", "CHF", 1.0, 1.0528);
+        assertEquals(new Currency("CHF", 94.98, 1.0528).toString(), result.toString());
 
     }
 
     @Test
     public void chf2eurTest() {
 
-        Double result = converter.convert(50, "CHF", "EUR");
-        assertEquals(result, Double.valueOf("52.64"));
+        Currency result = converter.convert(50, "CHF", "EUR", 1.0528, 1.0);
+        assertEquals(new Currency("EUR", 52.64, 1.0).toString(), result.toString());
     }
 }
